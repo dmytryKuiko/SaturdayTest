@@ -15,7 +15,8 @@ task ktlint(type: JavaExec, group: "verification") {
     classpath = configurations.ktlint
     args "${project.rootDir}/**/*.kt"
     // to generate report in checkstyle format prepend following args:
-    // "--reporter=plain", "--reporter=checkstyle,output=${buildDir}/ktlint.xml"
+    args "--reporter=plain"
+    args "--reporter=checkstyle,output=${rootProject.buildDir}/reports/ktlint.xml"
     // see https://github.com/shyiko/ktlint#usage for more
 }
 check.dependsOn ktlint

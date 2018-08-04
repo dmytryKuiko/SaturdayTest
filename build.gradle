@@ -22,6 +22,7 @@ detekt {
     version = "1.0.0.RC8"
     defaultProfile {
         input = "$projectDir"
+        config = "$rootDir/detekt-config.yml"
         filters = ".*/resources/.*,.*/build/.*"
         output = "${project.buildDir}/reports/detekt.xml"
         parallel = true
